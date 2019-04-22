@@ -8,8 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface Document : NSDocument
+@interface Document : NSDocument <NSTableViewDataSource> {
+  NSMutableArray *todoItems;
+  IBOutlet NSTableView *itemTableView;
+  
+}
 
+- (IBAction)createNewItem:(id)sender);
 
 @end
 
